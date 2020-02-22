@@ -75,14 +75,18 @@ def DECODER(morsecode2):
     f.insert(END," ")
     code = ""
     d.config(state = NORMAL)
+    d.delete(1.0,END)
     for i in f.get(1.0,END):
         if i == " ":
             if code not in Code:
                 code = ""
                 messagebox.showerror("Error Found", "Unknown Code")
                 f.config(state = NORMAL)
+                d.config(state = NORMAL)
                 f.delete(1.0, END)
+                d.delete(1.0,END)
                 d.config(state = DISABLED)
+
             for i in Code:
                 if i == code:
                     code = ""
@@ -90,6 +94,7 @@ def DECODER(morsecode2):
         
         else:
             code += i
+    f.delete(1.0,END)
     d.config(state = DISABLED)
 #Function for Clearing Text Box in Decoder
 def cDecode():
@@ -97,7 +102,6 @@ def cDecode():
     d.config(state = NORMAL)
     f.delete(1.0, END)
     d.delete(1.0,END)
-    d.config(state = DISABLED)
     d.config(state = DISABLED)
 #Function for playing MorseCode
 def play():
