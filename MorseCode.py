@@ -11,81 +11,10 @@ root.resizable(0,0)
 root.configure(bg="black")
 
 #MORSECODE
-morsecode = {"A":".-",
-             "B":"-...",
-             "C":"-.-.",
-             "D":"-..",
-             "E":".",
-             "F":"..-.",
-             "G":"--.",
-             "H":"....",
-             "I":"..",
-             "J":".---",
-             "K":"-.-",
-             "L":".-..",
-             "M":"--",
-             "N":"-.",
-             "O":"---",
-             "P":".--.",
-             "Q":"--.-",
-             "R":".-.",
-             "S":"...",
-             "T":"-",
-             "U":"..-",
-             "V":"...-",
-             "W":".--",
-             "X":"-..-",
-             "Y":"-.--",
-             "Z":"--..",
-             " ":"|",
-             "0":"-----",
-             "1":".----",
-             "2":"..---",
-             "3":"...--",
-             "4":"....-",
-             "5":".....",
-             "6":"-....",
-             "7":"--...",
-             "8":"---..",
-             "9":"----.",}
-morsecode2 = {".-":"A",
-             "-...":"B",
-             "-.-.":"C",
-             "-..":"D",
-             ".":"E",
-             "..-.":"F",
-             "--.":"G",
-             "....":"H",
-             "..":"I",
-             ".---":"J",
-             "-.-":"K",
-             ".-..":"L",
-             "--":"M",
-             "-.":"N",
-             "---":"O",
-             ".--.":"P",
-             "--.-":"Q",
-             ".-.":"R",
-             "...":"S",
-             "-":"T",
-             "..-":"U",
-             "...-":"V",
-             ".--":"W",
-             "-..-":"X",
-             "-.--":"Y",
-             "--..":"Z",
-             "|":" ",
-             "-----":"0",
-             ".----":"1",
-             "..---":"2",
-             "...--":"3",
-             "....-":"4",
-             ".....":"5",
-             "-....":"6",
-             "--...":"7",
-             "---..":"8",
-             "----.":"9",}
-
+morsecode = {"A":".-","B":"-...","C":"-.-.","D":"-..","E":".","F":"..-.","G":"--.","H":"....","I":"..","J":".---","K":"-.-","L":".-..","M":"--","N":"-.","O":"---","P":".--.","Q":"--.-","R":".-.","S":"...","T":"-","U":"..-","V":"...-","W":".--","X":"-..-","Y":"-.--","Z":"--.."," ":"|","0":"-----","1":".----","2":"..---","3":"...--","4":"....-","5":".....","6":"-....","7":"--...","8":"---..","9":"----.",}
+morsecode2 = {".-":"A","-...":"B","-.-.":"C","-..":"D",".":"E","..-.":"F","--.":"G","....":"H","..":"I",".---":"J","-.-":"K",".-..":"L","--":"M","-.":"N","---":"O",".--.":"P","--.-":"Q",".-.":"R","...":"S","-":"T","..-":"U","...-":"V",".--":"W","-..-":"X","-.--":"Y","--..":"Z","|":" ","-----":"0",".----":"1","..---":"2","...--":"3","....-":"4",".....":"5","-....":"6","--...":"7","---..":"8","----.":"9"}
+Char = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9","0"," "]
+Code = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--..","|",".----","..---","...--","....-",".....","-....","--...","---..","----."]
 #FRAMES
 Generator = LabelFrame(root,width = "500", height = "500", bg = "gray")
 Decoder = LabelFrame(root,width = "500", height = "500", bg = "lightblue")
@@ -119,81 +48,10 @@ def generate(morsecode):
     g.config(state = NORMAL)
     g.delete(1.0,END)
     for i in e.get("1.0",END):
-        if i == "A":
-            g.insert(INSERT," "+morsecode.get("A"))
-        if i == "B":
-            g.insert(INSERT," "+morsecode.get("B"))
-        if i == "C":
-            g.insert(INSERT," "+morsecode.get("C"))
-        if i == "D":
-            g.insert(INSERT," "+morsecode.get("D"))
-        if i == "E":
-            g.insert(INSERT," "+morsecode.get("E"))
-        if i == "F":
-            g.insert(INSERT," "+morsecode.get("F"))
-        if i == "G":
-            g.insert(INSERT," "+morsecode.get("G"))
-        if i == "H":
-            g.insert(INSERT," "+morsecode.get("H"))
-        if i == "I":
-            g.insert(INSERT," "+morsecode.get("I"))
-        if i == "J":
-            g.insert(INSERT," "+morsecode.get("J"))
-        if i == "K":
-            g.insert(INSERT," "+morsecode.get("K"))
-        if i == "L":
-            g.insert(INSERT," "+morsecode.get("L"))
-        if i == "M":
-            g.insert(INSERT," "+morsecode.get("M"))
-        if i == "N":
-            g.insert(INSERT," "+morsecode.get("N"))
-        if i == "O":
-            g.insert(INSERT," "+morsecode.get("O"))
-        if i == "P":
-            g.insert(INSERT," "+morsecode.get("P"))
-        if i == "Q":
-            g.insert(INSERT," "+morsecode.get("Q"))
-        if i == "R":
-            g.insert(INSERT," "+morsecode.get("R"))
-        if i == "S":
-            g.insert(INSERT," "+morsecode.get("S"))
-        if i == "T":
-            g.insert(INSERT," "+morsecode.get("T"))
-        if i == "U":
-            g.insert(INSERT," "+morsecode.get("U"))
-        if i == "V":
-            g.insert(INSERT," "+morsecode.get("V"))
-        if i == "W":
-            g.insert(INSERT," "+morsecode.get("W"))
-        if i == "X":
-            g.insert(INSERT," "+morsecode.get("X"))
-        if i == "Y":
-            g.insert(INSERT," "+morsecode.get("Y"))
-        if i == "Z":
-            g.insert(INSERT," "+morsecode.get("Z"))
-        if i == " ":
-            g.insert(INSERT," "+morsecode.get(" "))
-        if i == "1":
-            g.insert(INSERT," "+morsecode.get("1"))
-        if i == "2":
-            g.insert(INSERT," "+morsecode.get("2"))
-        if i == "3":
-            g.insert(INSERT," "+morsecode.get("3"))
-        if i == "4":
-            g.insert(INSERT," "+morsecode.get("4"))
-        if i == "5":
-            g.insert(INSERT," "+morsecode.get("5"))
-        if i == "6":
-            g.insert(INSERT," "+morsecode.get("6"))
-        if i == "7":
-            g.insert(INSERT," "+morsecode.get("7"))
-        if i == "8":
-            g.insert(INSERT," "+morsecode.get("8"))
-        if i == "9":
-            g.insert(INSERT," "+morsecode.get("9"))
-        if i == "0":
-            g.insert(INSERT," "+morsecode.get("0"))
-        
+        let = i
+        for i in Char:  
+            if i == let:
+                g.insert(INSERT," "+morsecode.get(i))
     g.config(state = DISABLED)
 #Function for Clearing Text Box in Generator
 def clear():
@@ -219,129 +77,19 @@ def DECODER(morsecode2):
     d.config(state = NORMAL)
     for i in f.get(1.0,END):
         if i == " ":
-            if code == ".-":
-                d.insert(INSERT,morsecode2.get(".-"))
+            if code not in Code:
                 code = ""
-            if code == "-...":
-                d.insert(INSERT,morsecode2.get("-..."))
-                code = ""
-            if code == "-.-.":
-                d.insert(INSERT,morsecode2.get("-.-."))
-                code = ""
-            if code == "-..":
-                d.insert(INSERT,morsecode2.get("-.."))
-                code = ""
-            if code == ".":
-                d.insert(INSERT,morsecode2.get("."))
-                code = ""
-            if code == "..-.":
-                d.insert(INSERT,morsecode2.get("..-."))
-                code = ""
-            if code == "--.":
-                d.insert(INSERT,morsecode2.get("--."))
-                code = ""
-            if code == "....":
-                d.insert(INSERT,morsecode2.get("...."))
-                code = ""
-            if code == "..":
-                d.insert(INSERT,morsecode2.get(".."))
-                code = ""
-            if code == ".---":
-                d.insert(INSERT,morsecode2.get(".---"))
-                code = ""
-            if code == "-.-":
-                d.insert(INSERT,morsecode2.get("-.-"))
-                code= ""
-            if code == ".-..":
-                d.insert(INSERT,morsecode2.get(".-.."))
-                code = ""
-            if code == "--":
-                d.insert(INSERT,morsecode2.get("--"))
-                code = ""
-            if code == "-.":
-                d.insert(INSERT,morsecode2.get("-."))
-                code = ""
-            if code == "---":
-                d.insert(INSERT,morsecode2.get("---"))
-                code = ""
-            if code == ".--.":
-                d.insert(INSERT,morsecode2.get(".--."))
-                code = ""
-            if code == "--.-":
-                d.insert(INSERT,morsecode2.get("--.-"))
-                code = ""
-            if code == ".-.":
-                d.insert(INSERT,morsecode2.get(".-."))
-                code = ""
-            if code == "...":
-                d.insert(INSERT,morsecode2.get("..."))
-                code = ""
-            if code == "-":
-                d.insert(INSERT,morsecode2.get("-"))
-                code = ""
-            if code == "..-":
-                d.insert(INSERT,morsecode2.get("..-"))
-                code = ""
-            if code == "...-":
-                d.insert(INSERT,morsecode2.get("...-"))
-                code = ""
-            if code == ".--":
-                d.insert(INSERT,morsecode2.get(".--"))
-                code = ""
-            if code == "-..-":
-                d.insert(INSERT,morsecode2.get("-..-"))
-                code = ""
-            if code == "-.--":
-                d.insert(INSERT,morsecode2.get("-.--"))
-                code = ""
-            if code == "--..":
-                d.insert(INSERT,morsecode2.get("--.."))
-                code = ""
-            if code == "-----":
-                d.insert(INSERT,morsecode2.get("-----"))
-                code = ""
-            if code == ".----":
-                d.insert(INSERT,morsecode2.get(".----"))
-                code = ""
-            if code == "..---":
-                d.insert(INSERT,morsecode2.get("..---"))
-                code = ""
-            if code == "...--":
-                d.insert(INSERT,morsecode2.get("...--"))
-                code = ""
-            if code == "....-":
-                d.insert(INSERT,morsecode2.get("....-"))
-                code = ""
-            if code == ".....":
-                d.insert(INSERT,morsecode2.get("....."))
-                code = ""
-            if code == "-....":
-                d.insert(INSERT,morsecode2.get("-...."))
-                code = ""
-            if code == "--...":
-                d.insert(INSERT,morsecode2.get("--..."))
-                code = ""
-            if code == "---..":
-                d.insert(INSERT,morsecode2.get("---.."))
-                code = ""
-            if code == "----.":
-                d.insert(INSERT,morsecode2.get("----."))
-                code = ""
-            if code == "|":
-                d.insert(INSERT,morsecode2.get("|"))
-                code = ""
-            if code == "":
-                code = ""
-            else:
                 messagebox.showerror("Error Found", "Unknown Code")
-                code =""
                 f.config(state = NORMAL)
                 f.delete(1.0, END)
                 d.config(state = DISABLED)
+            for i in Code:
+                if i == code:
+                    code = ""
+                    d.insert(INSERT,morsecode2.get(i))
+        
         else:
             code += i
-        
-        
     d.config(state = DISABLED)
 #Function for Clearing Text Box in Decoder
 def cDecode():
@@ -357,9 +105,9 @@ def play():
         if i == ".":
             winsound.Beep(3500,200)
         if i == "-":
-            winsound.Beep(3500,420)
+            winsound.Beep(3500,400)
         if i == " ":
-            time.sleep(0.3)
+            time.sleep(0.35)
             
             
     
